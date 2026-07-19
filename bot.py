@@ -21,17 +21,17 @@ def check_owner(func):
 
 def main_keyboard():
     keyboard = [
-        [InlineKeyboardButton(" Monitor Ban", callback_data="monitor_ban"),
-         InlineKeyboardButton("✓ Monitor Unban", callback_data="monitor_unban")],
-        [InlineKeyboardButton("✓ Monitor Verify", callback_data="monitor_verify"),
-         InlineKeyboardButton("≡ Help", callback_data="help")]
+        [InlineKeyboardButton("✕ ᴍᴏɴɪᴛᴏʀ ʙᴀɴ", callback_data="monitor_ban"),
+         InlineKeyboardButton("✓ ᴍᴏɴɪᴛᴏʀ ᴜɴʙᴀɴ", callback_data="monitor_unban")],
+        [InlineKeyboardButton("✓ ᴍᴏɴɪᴛᴏʀ ᴠᴇʀɪꜰʏ", callback_data="monitor_verify"),
+         InlineKeyboardButton("≡ ʜᴇʟᴘ", callback_data="help")]
     ]
     return InlineKeyboardMarkup(keyboard)
 
 def start_caption():
-    message = "<b>Instagram Profile Monitor Bot</b>\n\n"
-    message += "<blockquote>Track Instagram profiles for ban, unban, and verification status changes.</blockquote>\n\n"
-    message += '<a href="https://t.me/mannerful">Developer</a> | <a href="https://t.me/+QEwTCUt99RFhMzc9">Channel</a>'
+    message = "<b>ɪɴꜱᴛᴀɢʀᴀᴍ ᴘʀᴏꜰɪʟᴇ ᴍᴏɴɪᴛᴏʀ ʙᴏᴛ</b>\n\n"
+    message += "<blockquote>ᴛʀᴀᴄᴋ ɪɴꜱᴛᴀɢʀᴀᴍ ᴘʀᴏꜰɪʟᴇꜱ ꜰᴏʀ ʙᴀɴ, ᴜɴʙᴀɴ, ᴀɴᴅ ᴠᴇʀɪꜰɪᴄᴀᴛɪᴏɴ ꜱᴛᴀᴛᴜꜱ ᴄʜᴀɴɢᴇꜱ.</blockquote>\n\n"
+    message += '<a href="https://t.me/mannerful">ᴅᴇᴠᴇʟᴏᴘᴇʀ</a> | <a href="https://t.me/+QEwTCUt99RFhMzc9">ᴄʜᴀɴɴᴇʟ</a>'
     return message
 
 @check_owner
@@ -53,27 +53,27 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
 
     if query.data == "help":
-        keyboard = [[InlineKeyboardButton("← Back", callback_data="back")]]
+        keyboard = [[InlineKeyboardButton("← ʙᴀᴄᴋ", callback_data="back")]]
         reply_markup = InlineKeyboardMarkup(keyboard)
 
-        help_text = "<b>📖 Help Guide</b>\n\n"
-        help_text += "<b>Commands:</b>\n"
-        help_text += "• /settime - Set monitoring interval\n"
-        help_text += "• /setbanchannel - Set channel for ban notifications\n"
-        help_text += "• /setunbanchannel - Set channel for unban notifications\n"
-        help_text += "• /setverifychannel - Set channel for verify notifications\n"
-        help_text += "• /viewsettings - View current settings\n"
-        help_text += "• /active_monitor - View active monitors\n"
-        help_text += "• /stop - Stop a monitor\n"
-        help_text += "• /insta - Get Instagram profile info\n"
-        help_text += "• /testban - Test ban notification\n"
-        help_text += "• /testunban - Test unban notification\n\n"
-        help_text += "<b>How to Use:</b>\n"
-        help_text += "1. Set time interval using /settime\n"
-        help_text += "2. Set notification channels using /setbanchannel, /setunbanchannel, /setverifychannel\n"
-        help_text += "3. Choose monitoring type\n"
-        help_text += "4. Send Instagram username or link\n"
-        help_text += "5. Bot will notify when status changes"
+        help_text = "<b>📖 ʜᴇʟᴘ ɢᴜɪᴅᴇ</b>\n\n"
+        help_text += "<b>ᴄᴏᴍᴍᴀɴᴅꜱ:</b>\n"
+        help_text += "• /settime - ꜱᴇᴛ ᴍᴏɴɪᴛᴏʀɪɴɢ ɪɴᴛᴇʀᴠᴀʟ\n"
+        help_text += "• /setbanchannel - ꜱᴇᴛ ᴄʜᴀɴɴᴇʟ ꜰᴏʀ ʙᴀɴ ɴᴏᴛɪꜰɪᴄᴀᴛɪᴏɴꜱ\n"
+        help_text += "• /setunbanchannel - ꜱᴇᴛ ᴄʜᴀɴɴᴇʟ ꜰᴏʀ ᴜɴʙᴀɴ ɴᴏᴛɪꜰɪᴄᴀᴛɪᴏɴꜱ\n"
+        help_text += "• /setverifychannel - ꜱᴇᴛ ᴄʜᴀɴɴᴇʟ ꜰᴏʀ ᴠᴇʀɪꜰʏ ɴᴏᴛɪꜰɪᴄᴀᴛɪᴏɴꜱ\n"
+        help_text += "• /viewsettings - ᴠɪᴇᴡ ᴄᴜʀʀᴇɴᴛ ꜱᴇᴛᴛɪɴɢꜱ\n"
+        help_text += "• /active_monitor - ᴠɪᴇᴡ ᴀᴄᴛɪᴠᴇ ᴍᴏɴɪᴛᴏʀꜱ\n"
+        help_text += "• /stop - ꜱᴛᴏᴘ ᴀ ᴍᴏɴɪᴛᴏʀ\n"
+        help_text += "• /insta - ɢᴇᴛ ɪɴꜱᴛᴀɢʀᴀᴍ ᴘʀᴏꜰɪʟᴇ ɪɴꜰᴏ\n"
+        help_text += "• /testban - ᴛᴇꜱᴛ ʙᴀɴ ɴᴏᴛɪꜰɪᴄᴀᴛɪᴏɴ\n"
+        help_text += "• /testunban - ᴛᴇꜱᴛ ᴜɴʙᴀɴ ɴᴏᴛɪꜰɪᴄᴀᴛɪᴏɴ\n\n"
+        help_text += "<b>ʜᴏᴡ ᴛᴏ ᴜꜱᴇ:</b>\n"
+        help_text += "1. ꜱᴇᴛ ᴛɪᴍᴇ ɪɴᴛᴇʀᴠᴀʟ ᴜꜱɪɴɢ /settime\n"
+        help_text += "2. ꜱᴇᴛ ɴᴏᴛɪꜰɪᴄᴀᴛɪᴏɴ ᴄʜᴀɴɴᴇʟꜱ ᴜꜱɪɴɢ /setbanchannel, /setunbanchannel, /setverifychannel\n"
+        help_text += "3. ᴄʜᴏᴏꜱᴇ ᴍᴏɴɪᴛᴏʀɪɴɢ ᴛʏᴘᴇ\n"
+        help_text += "4. ꜱᴇɴᴅ ɪɴꜱᴛᴀɢʀᴀᴍ ᴜꜱᴇʀɴᴀᴍᴇ ᴏʀ ʟɪɴᴋ\n"
+        help_text += "5. ʙᴏᴛ ᴡɪʟʟ ɴᴏᴛɪꜰʏ ᴡʜᴇɴ ꜱᴛᴀᴛᴜꜱ ᴄʜᴀɴɢᴇꜱ"
 
         await query.edit_message_caption(
             caption=help_text,
@@ -98,9 +98,9 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         user_states[user_id] = {"waiting_for": "username", "type": monitor_type}
 
         type_names = {
-            "ban": "✕ Monitor Ban",
-            "unban": "✓ Monitor Unban",
-            "verify": "✓ Monitor Verify"
+            "ban": "✕ ᴍᴏɴɪᴛᴏʀ ʙᴀɴ",
+            "unban": "✓ ᴍᴏɴɪᴛᴏʀ ᴜɴʙᴀɴ",
+            "verify": "✓ ᴍᴏɴɪᴛᴏʀ ᴠᴇʀɪꜰʏ"
         }
 
         await context.bot.send_chat_action(chat_id=user_id, action="typing")
@@ -159,12 +159,12 @@ async def button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 @check_owner
 async def settime_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [
-        [InlineKeyboardButton("◴ 5 min", callback_data="time_5"),
-         InlineKeyboardButton("◴ 10 min", callback_data="time_10")],
-        [InlineKeyboardButton("◴ 15 min", callback_data="time_15"),
-         InlineKeyboardButton("◴ 30 min", callback_data="time_30")],
-        [InlineKeyboardButton("• Custom", callback_data="time_custom"),
-         InlineKeyboardButton("✕ Close ✕", callback_data="close_settime")]
+        [InlineKeyboardButton("◴ 5 ᴍɪɴ", callback_data="time_5"),
+         InlineKeyboardButton("◴ 10 ᴍɪɴ", callback_data="time_10")],
+        [InlineKeyboardButton("◴ 15 ᴍɪɴ", callback_data="time_15"),
+         InlineKeyboardButton("◴ 30 ᴍɪɴ", callback_data="time_30")],
+        [InlineKeyboardButton("• ᴄᴜꜱᴛᴏᴍ", callback_data="time_custom"),
+         InlineKeyboardButton("✕ ᴄʟᴏꜱᴇ ✕", callback_data="close_settime")]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
 
